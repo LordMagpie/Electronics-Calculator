@@ -1,0 +1,90 @@
+﻿<Page
+    x:Class="Electronics_Calculator.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Electronics_Calculator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+	<Grid>
+		<StackPanel Background="#FF7764F1" Width="auto" Height="auto">
+			<Grid x:ConnectionId='1' x:Name="LayoutRoot">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="1*"/>
+					<ColumnDefinition Width="1*"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="1*"/>
+				</Grid.RowDefinitions>
+				
+				<StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+					<StackPanel Orientation="Vertical">
+						<TextBlock x:ConnectionId='13' x:Name="textblock1" Text="R1:" Margin="10" FontSize="30" Foreground="#FFFFFFFF"/>
+						<TextBlock x:ConnectionId='14' x:Name="textblock2" Text="R2:" Margin="10" FontSize="30" Foreground="#FFFFFFFF"/>
+						<TextBlock x:ConnectionId='15' x:Name="textblock3" Text="C:" Margin="10" FontSize="30" Foreground="#FFFFFFFF"/>		
+					</StackPanel>
+					<StackPanel Orientation="Vertical">
+						<TextBox x:ConnectionId='10' x:Name="textbox1" Margin="5" FontSize="30" Background="#CCFFFFFF" InputScope="Number"/>
+						<TextBox x:ConnectionId='11' x:Name="textbox2" Margin="5" FontSize="30" Background="#CCFFFFFF" InputScope="Number"/>
+						<TextBox x:ConnectionId='12' x:Name="textbox3" Margin="5" FontSize="30" Background="#CCFFFFFF" InputScope="Number"/>
+					</StackPanel>
+					<StackPanel Orientation="Vertical">
+						<ComboBox x:ConnectionId='7' x:Name="cbxR1" FontSize="30" Margin="0,5" SelectedIndex="3" IsTabStop="False">
+							<x:String>nΩ</x:String>
+							<x:String>µΩ</x:String>
+							<x:String>mΩ</x:String>
+							<x:String>Ω</x:String>
+							<x:String>kΩ</x:String>
+							<x:String>MΩ</x:String>
+							<x:String>GΩ</x:String>
+						</ComboBox>
+						<ComboBox x:ConnectionId='8' x:Name="cbxR2" FontSize="30" Margin="0,5" SelectedIndex="3" IsTabStop="False">
+							<x:String>nΩ</x:String>
+							<x:String>µΩ</x:String>
+							<x:String>mΩ</x:String>
+							<x:String>Ω</x:String>
+							<x:String>kΩ</x:String>
+							<x:String>MΩ</x:String>
+							<x:String>GΩ</x:String>
+						</ComboBox>
+						<ComboBox x:ConnectionId='9' x:Name="cbxC" FontSize="30" Margin="0,5" SelectedIndex="1" IsTabStop="False">
+							<x:String>nF</x:String>
+							<x:String>µF</x:String>
+							<x:String>mF</x:String>
+							<x:String>F</x:String>
+							<x:String>kF</x:String>
+							<x:String>MF</x:String>
+							<x:String>GF</x:String>
+						</ComboBox>
+					</StackPanel>
+				</StackPanel>
+
+				<StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+					<TextBlock x:ConnectionId='2' x:Name="tbkFrequency" Text="f =" Margin="10" FontSize="30" Foreground="#FFFFFFFF"/>
+					<TextBlock x:ConnectionId='3' x:Name="tbkHighTime" Text="High Time =" Margin="10" FontSize="30" Foreground="#FFFFFFFF"/>
+					<TextBlock x:ConnectionId='4' x:Name="tbkLowTime" Text="Low Time =" Margin="10" FontSize="30" Foreground="#FFFFFFFF"/>
+					<TextBlock x:ConnectionId='5' x:Name="tbkTotalTime" Text="Total Time =" Margin="10" FontSize="30" Foreground="#FFFFFFFF"/>
+					<TextBlock x:ConnectionId='6' x:Name="tbkDutyCtcle" Text="Duty Cycle =" Margin="10" FontSize="30" Foreground="#FFFFFFFF"/>
+				</StackPanel>
+
+				<StackPanel Grid.Column="0" Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+					<TextBlock Foreground="#FFFFFFFF" FontSize="30" Margin="10" Text="Notes:"/>
+					<TextBlock Foreground="#FFFFFFFF" FontSize="20" Margin="10" Padding="10,10,50,10" TextWrapping="Wrap" Text="Increasing C will increase the cycle time (and hence, reduce the frequency)."/>
+					<TextBlock Foreground="#FFFFFFFF" FontSize="20" Margin="10" Padding="10,10,50,10" TextWrapping="Wrap" Text="Increasing R1 will increase time high, but will leave time low unaffected."/>
+					<TextBlock Foreground="#FFFFFFFF" FontSize="20" Margin="10" Padding="10,10,50,10" TextWrapping="Wrap" Text="Increasing R2 will increase time high, increase time low and decrease the duty cycle (down to a minimum of 50%)."/>
+				</StackPanel>
+
+				<StackPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+					<Image Width="300" Height="300" Margin="15" Source="555 Diagram.gif"/>
+					<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+						<Image Width="200" Height="176" Margin="15" Source="555-01.jpg"/>
+						<Image Width="200" Height="204" Margin="15" Source="555-02.jpg"/>
+					</StackPanel>
+				</StackPanel>
+			</Grid>
+		</StackPanel>
+	</Grid>
+</Page>
+
